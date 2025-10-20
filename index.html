@@ -1,13 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js"></script>
-    <title>Document</title>
+    <title>وجبة سورية - المطبخ السوري الأصيل</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    
+    <header>
+        <div class="logo">وجبة سورية</div>
+        <nav>
+            <a href="index.html" class="active">الرئيسية</a>
+            <a href="#">المفضّلات</a>
+            <a href="#">قائمة المشتريات</a>
+            <a href="#">عن المطبخ السوري</a>
+        </nav>
+    </header>
+
+    <main class="home-page">
+        <section class="search-bar-container">
+            <div class="search-box">
+                <input type="text" id="recipe-search" placeholder="ابحث بالاسم أو المكونات (رز + دجاج...)">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </section>
+
+        <section class="daily-meal">
+            <h2>وجبة اليوم</h2>
+            <div class="meal-card featured-meal" onclick="location.href='recipe.html';">
+                <img src="https://via.placeholder.com/800x400?text=Shawarma+Image" alt="وجبة اليوم: الشاورما" class="featured-img">
+                <div class="meal-details">
+                    <h3>الشاورما على أصولها</h3>
+                    <p>طبق غني بالبهارات والدجاج المشوي.</p>
+                    <div class="meta-info">
+                        <span><i class="fas fa-clock"></i> 45 دقيقة</span>
+                        <span><i class="fas fa-fire"></i> متوسط</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="recipe-categories">
+            <h2>استكشف الوصفات</h2>
+            <div class="categories-grid">
+                <a href="#" class="category-card">
+                    <i class="fas fa-utensils"></i>
+                    <span>أكلات شامية</span>
+                </a>
+                <a href="#" class="category-card">
+                    <i class="fas fa-ice-cream"></i>
+                    <span>حلويات سورية</span>
+                </a>
+                <a href="#" class="category-card">
+                    <i class="fas fa-leaf"></i>
+                    <span>مقبلات</span>
+                </a>
+                <a href="#" class="category-card">
+                    <i class="fas fa-drumstick-bite"></i>
+                    <span>مشاوي</span>
+                </a>
+                </div>
+        </section>
+
+        <section class="latest-recipes">
+            <h2>مأكولات شعبية</h2>
+            <div class="recipes-grid">
+                <div class="meal-card recipe-item" onclick="location.href='recipe.html';">
+                    <img src="https://via.placeholder.com/300x200?text=Kubbeh+Image" alt="كبة مقلية">
+                    <h4>كبة مقلية (على السيخ)</h4>
+                    <div class="meta-info">
+                        <span><i class="fas fa-clock"></i> 60 دقيقة</span>
+                        <span><i class="fas fa-fire"></i> محترف</span>
+                    </div>
+                </div>
+                <div class="meal-card recipe-item" onclick="location.href='recipe.html';">
+                    <img src="https://via.placeholder.com/300x200?text=Fattoush+Image" alt="فتوش">
+                    <h4>سلطة الفتوش المنعشة</h4>
+                    <div class="meta-info">
+                        <span><i class="fas fa-clock"></i> 15 دقيقة</span>
+                        <span><i class="fas fa-fire"></i> سهل</span>
+                    </div>
+                </div>
+                </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 وجبة سورية. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="app.js"></script>
 </body>
 </html>
