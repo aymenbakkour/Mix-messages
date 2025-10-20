@@ -1,40 +1,40 @@
-// Code to generator messages
-let i = Math.floor(Math.random() * 10);
-  
-    switch (i) {
-        case  1 :
-            window.alert("حكمة اليوم: من جد وجد");
-            break;
-        case  1:
-            window.alert("حكمة اليوم:  العلم نور");
-            break;
-        case  2:
-            window.alert("حكمة اليوم: خيرجليس في الأنام كتاب");
-            break;
-        case  3:
-            window.alert("حكمة اليوم:  الجار قبل الدار");
-            break;
-        case  4:
-            window.alert("حكمة اليوم:  من زاد في حبه لنفسه زاد كره الناس له");
-            break;
-        case  5:
-            window.alert("حكمة اليوم:  كُن عادلاً قبل أن تكون كريماً.");
-            break;
-        case  6:
-            window.alert("حكمة اليوم:  يسخر من الجروح كل من لا يعرف الألم");
-            break;
-        case  6:
-            window.alert("حكمة اليوم: لسان العاقل وراء قلبه، وقلب الأحمق وراء لسانه");
-            break;
-        case  6:
-            window.alert("حكمة اليوم:  من اتكل في سفره على زاد غيره طال جوعه.");
-            break;
-        case  6:
-            window.alert("حكمة اليوم: الابتسامة كلمة طيبة بغير حروف");
-            break;
-        default:
-            window.alert("حكمة اليوم:  اطلب العلم ولو في الصين");
-            break;
-}
+document.addEventListener('DOMContentLoaded', () => {
+    // محاكاة لزر "أضف للمفضلة" في صفحة الوصفة
+    const favButton = document.getElementById('add-to-fav');
+    
+    if (favButton) {
+        const recipeId = 'molokhia-recipe-id'; // لتحديد الوصفة
+        const favorites = JSON.parse(localStorage.getItem('syrian_meals_favorites')) || [];
         
+        // التحقق مما إذا كانت الوصفة مفضلة مسبقاً
+        const isFavorite = favorites.includes(recipeId);
+        if (isFavorite) {
+            favButton.innerHTML = '<i class="fas fa-heart"></i> تمت الإضافة';
+            favButton.classList.add('active');
+        } else {
+            favButton.innerHTML = '<i class="far fa-heart"></i> أضف للمفضلة';
+        }
 
+        favButton.addEventListener('click', () => {
+            let currentFavorites = JSON.parse(localStorage.getItem('syrian_meals_favorites')) || [];
+            
+            if (currentFavorites.includes(recipeId)) {
+                // إزالة من المفضلة
+                currentFavorites = currentFavorites.filter(id => id !== recipeId);
+                favButton.innerHTML = '<i class="far fa-heart"></i> أضف للمفضلة';
+                favButton.classList.remove('active');
+                alert('تمت إزالة الملوخية من المفضلة.');
+            } else {
+                // إضافة للمفضلة
+                currentFavorites.push(recipeId);
+                favButton.innerHTML = '<i class="fas fa-heart"></i> تمت الإضافة';
+                favButton.classList.add('active');
+                alert('تمت إضافة الملوخية إلى المفضلة!');
+            }
+            
+            localStorage.setItem('syrian_meals_favorites', JSON.stringify(currentFavorites));
+        });
+    }
+
+    // يمكنك إضافة المزيد من وظائف JS هنا (مثل البحث، قائمة المشتريات...)
+});
